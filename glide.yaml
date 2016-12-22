@@ -1,0 +1,4 @@
+package: github.com/phacops/echorelic
+import:
+- package: github.com/labstack/echo
+- package: github.com/newrelic/go-agent
