@@ -13,7 +13,11 @@ func Monitor(app newrelic.Application) echo.MiddlewareFunc {
 
 			c.Set("newrelic", tx)
 
-			return next(c)
+			err := next(c)
+
+			tx.NoticeError(err)
+
+			return err
 		}
 	}
 }
